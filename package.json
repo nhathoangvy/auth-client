@@ -32,7 +32,7 @@
     "strip-loader": "^0.1.2",
     "webpack": "^1.12.13",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-dev-server": "^1.9.0",
+    "webpack-dev-server": "^3.1.11",
     "webpack-hot-middleware": "^1.1.0",
     "webpack-isomorphic-tools": "^0.8.8"
   }

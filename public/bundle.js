@@ -77,10 +77,10 @@
 	(0, _reactDom.render)(_react2.default.createElement(
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
-	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/register', component: _Register2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/edit', component: _Edit2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/auth-client', component: _App2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/auth-client/register', component: _Register2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/auth-client/edit', component: _Edit2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/auth-client/login', component: _Login2.default })
 	), rootElement);
 
 /***/ }),
@@ -19884,7 +19884,7 @@
 	            var auth = localStorage.getItem('authorization');
 	            if (typeof auth == "undefined" || !auth) {
 	                localStorage.removeItem('authorization');
-	                window.location.href = '/login';
+	                window.location.href = '/auth-client/login';
 	            } else {
 	                var xhr = new XMLHttpRequest();
 	                xhr.open('GET', _base2.default + 'user/info', false);
@@ -19910,10 +19910,10 @@
 	                            } catch (e) {
 	                                result = null;
 	                            }
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                        if (!result) {
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                    }
 	                };
@@ -19926,7 +19926,7 @@
 	            var auth = localStorage.getItem('authorization');
 	            if (typeof auth == "undefined" || !auth) {
 	                localStorage.removeItem('authorization');
-	                window.location.href = '/login';
+	                window.location.href = '/auth-client/login';
 	            } else {
 	                var xhr = new XMLHttpRequest();
 	                xhr.open('DELETE', _base2.default + 'user/signout', false);
@@ -19949,7 +19949,7 @@
 	                        }
 	                        localStorage.removeItem('authorization');
 	                        if (!result) {
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                    }
 	                };
@@ -19974,7 +19974,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'a',
-	                    { href: '/edit' },
+	                    { href: '/auth-client/edit' },
 	                    'Edit'
 	                ),
 	                _react2.default.createElement(
@@ -20000,7 +20000,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var baseControlUrl = 'http://interview.buuukapps.com/backend/v1/';
+	var baseControlUrl = 'http://interview.buuukapps.com/auth/v1/';
 	exports.default = baseControlUrl;
 
 /***/ }),
@@ -20049,7 +20049,7 @@
 	        null,
 	        _react2.default.createElement(
 	          "a",
-	          { href: "/" },
+	          { href: "/auth-client" },
 	          "Simple app"
 	        )
 	      );
@@ -20115,7 +20115,7 @@
 	            }
 	            var history = localStorage.getItem('authorization');
 	            if (history) {
-	                window.location.href = '/';
+	                window.location.href = '/auth-client';
 	            }
 	        }
 	    }, {
@@ -20136,7 +20136,7 @@
 	                            try {
 	                                result = JSON.parse(this.responseText);
 	                                localStorage.setItem('authorization', auth);
-	                                window.location.href = '/';
+	                                window.location.href = '/auth-client';
 	                            } catch (e) {
 	                                result = null;
 	                            }
@@ -20197,7 +20197,7 @@
 	                    ),
 	                    _react2.default.createElement(
 	                        'a',
-	                        { href: '/register' },
+	                        { href: '/auth-client/register' },
 	                        'Register'
 	                    )
 	                )
@@ -20294,7 +20294,7 @@
 	                        if (this.status == 200) {
 	                            try {
 	                                result = JSON.parse(this.responseText);
-	                                window.location.href = '/login';
+	                                window.location.href = '/auth-client/login';
 	                            } catch (e) {
 	                                result = null;
 	                            }
@@ -20413,7 +20413,7 @@
 	            var auth = localStorage.getItem('authorization');
 	            if (typeof auth == "undefined" || !auth) {
 	                localStorage.removeItem('authorization');
-	                window.location.href = '/login';
+	                window.location.href = '/auth-client/login';
 	            } else {
 	                var xhr = new XMLHttpRequest();
 	                xhr.open('GET', _base2.default + 'user/info', false);
@@ -20440,10 +20440,10 @@
 	                            } catch (e) {
 	                                result = null;
 	                            }
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                        if (!result) {
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                    }
 	                };
@@ -20456,7 +20456,7 @@
 	            var auth = localStorage.getItem('authorization');
 	            if (typeof auth == "undefined" || !auth) {
 	                localStorage.removeItem('authorization');
-	                window.location.href = '/login';
+	                window.location.href = '/auth-client/login';
 	            }
 	            var formData = new FormData();
 	            var phone = void 0,
@@ -20503,13 +20503,13 @@
 	                            } catch (e) {
 	                                result = null;
 	                            }
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        }
 	                        if (!result) {
-	                            window.location.href = '/login';
+	                            window.location.href = '/auth-client/login';
 	                        } else {
 	                            alert(result.message);
-	                            window.location.href = '/';
+	                            window.location.href = '/auth-client';
 	                        }
 	                    }
 	                };

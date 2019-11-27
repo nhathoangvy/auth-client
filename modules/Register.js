@@ -43,7 +43,7 @@ class Register extends React.Component{
                     if (this.status == 200) {
                         try {
                             result = JSON.parse(this.responseText);
-                            window.location.href = '/login';
+                            window.location.href = '/auth-client/login';
                         } catch (e) {
                             result = null
                         }

@@ -11,7 +11,7 @@ class Headers extends React.Component{
   render() 
   {
     return (
-        <h1><a href="/">Simple app</a></h1>
+        <h1><a href="/auth-client">Simple app</a></h1>
     )
   }
 }

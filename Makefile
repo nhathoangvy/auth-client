@@ -13,9 +13,10 @@ all: clean install build
 clean: 
 	@echo " => Cleaning..."
 	sudo rm -rf $(PROJECT_PACKAGE)
+	pm2 delete "auth-client"
 install:
 	@echo " => Checking and Install if there is any missing dependencies..."
 	npm install
 build: 
 	@echo " => Compiling...It's running..." 
-	pm2 start npm --name "auth-client" -- start -i 0
+	pm2 start npm --name "auth-client" -- start -i 2

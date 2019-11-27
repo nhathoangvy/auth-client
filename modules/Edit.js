@@ -13,7 +13,7 @@ class Edit extends React.Component{
         var auth = localStorage.getItem('authorization');
         if(typeof(auth) == "undefined" || !auth){
             localStorage.removeItem('authorization');
-            window.location.href = '/login';
+            window.location.href = '/auth-client/login';
         }else {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', baseControlUrl + 'user/info', false);
@@ -40,10 +40,10 @@ class Edit extends React.Component{
                         } catch (e) {
                             result = null
                         }
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                     if (!result) {
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                 }
             };
@@ -55,7 +55,7 @@ class Edit extends React.Component{
         var auth = localStorage.getItem('authorization');
         if(typeof(auth) == "undefined" || !auth){
             localStorage.removeItem('authorization');
-            window.location.href = '/login';
+            window.location.href = '/auth-client/login';
         }
         let formData = new FormData();
         let phone, password, email, fullname;
@@ -99,13 +99,13 @@ class Edit extends React.Component{
                         } catch (e) {
                             result = null
                         }
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                     if (!result) {
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }else {
                         alert(result.message);
-                        window.location.href = '/';
+                        window.location.href = '/auth-client';
                     }
                 }
             };

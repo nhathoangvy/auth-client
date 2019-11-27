@@ -17,7 +17,7 @@ class Login extends React.Component{
         }
         var history = localStorage.getItem('authorization');
         if(history){
-            window.location.href = '/';
+            window.location.href = '/auth-client';
         }
         
     }
@@ -37,7 +37,7 @@ class Login extends React.Component{
                         try {
                             result = JSON.parse(this.responseText);
                             localStorage.setItem('authorization',auth);
-                            window.location.href = '/';
+                            window.location.href = '/auth-client';
                         }catch (e) {
                             result = null
                         }
@@ -73,7 +73,7 @@ class Login extends React.Component{
                 <input type="password" id="password" name="password"/>
                 </div><br/><br/>
                 <a onClick={this.login}>Login</a>
-                <a href="/register">Register</a>
+                <a href="/auth-client/register">Register</a>
             </div>
         </div>
     )

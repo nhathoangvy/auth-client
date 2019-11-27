@@ -13,7 +13,7 @@ class Home extends React.Component{
         var auth = localStorage.getItem('authorization');
         if(typeof(auth) == "undefined" || !auth){
             localStorage.removeItem('authorization');
-            window.location.href = '/login';
+            window.location.href = '/auth-client/login';
         }else {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', baseControlUrl + 'user/info', false);
@@ -39,10 +39,10 @@ class Home extends React.Component{
                         } catch (e) {
                             result = null
                         }
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                     if (!result) {
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                 }
             };
@@ -54,7 +54,7 @@ class Home extends React.Component{
         var auth = localStorage.getItem('authorization');
         if(typeof(auth) == "undefined" || !auth){
             localStorage.removeItem('authorization');
-            window.location.href = '/login';
+            window.location.href = '/auth-client/login';
         }else {
             var xhr = new XMLHttpRequest();
             xhr.open('DELETE', baseControlUrl + 'user/signout', false);
@@ -77,7 +77,7 @@ class Home extends React.Component{
                     }
                     localStorage.removeItem('authorization');
                     if (!result) {
-                        window.location.href = '/login';
+                        window.location.href = '/auth-client/login';
                     }
                 }
             };
@@ -96,7 +96,7 @@ class Home extends React.Component{
             <li id="phone"></li>
             <li id="email"></li>
         </ul>
-        <a href="/edit">Edit</a>
+        <a href="/auth-client/edit">Edit</a>
         <a onClick={this.logout}>Logout</a>
         </div>
     )
